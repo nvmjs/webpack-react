@@ -23,7 +23,7 @@ var config = {
 	    		{test: /\.jsx?$/,loader: 'babel',exclude:/node_modules/,query:{presets:['es2015','react']}}, 
 	    		{test: /\.css$/,loader: 'style!css'},
 	    		{test: /\.scss$/,loader: 'style!css!sass'},
-	    		{test: /\.(png|jpg|gif)$/, loader: 'url-loader?limit=8192'}
+	    		{test: /\.(png|jpg|gif)$/, loader: 'url-loader?limit=8192&name=img/[hash:8].[name].[ext]'}
 	    		 /*配置信息的参数“?limit=8192”表示将所有小于8kb的图片都转为base64形式（其实应该说超过8kb的才
 					使用 url-loader 来映射到文件，否则转为data url形式）。 */
 					/*拿最后一个 url-loader 来说，它会将样式中引用到的图片转为模块来处理，使用该加载器需要先进行安
